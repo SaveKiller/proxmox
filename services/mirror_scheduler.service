@@ -1,0 +1,18 @@
+[Unit]
+Description=Mirror Scheduler
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/admin/pyscripts/mirror_scheduler.py
+Restart=on-failure
+User=admin
+WorkingDirectory=/home/admin/pyscripts
+Environment=PYTHONUNBUFFERED=1
+SyslogIdentifier=mirror_scheduler
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

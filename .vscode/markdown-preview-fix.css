@@ -1,0 +1,13 @@
+/* Workaround: tabelle markdown che vanno a capo al passaggio del mouse (bug Cursor) */
+
+.md-table-cell-content {
+    min-inline-size: unset !important;
+    max-inline-size: none !important;
+}
+
+.vscode-body table td,
+.vscode-body table th,
+.markdown-root table td,
+.markdown-root table th {
+    white-space: nowrap;
+}

@@ -1,0 +1,156 @@
+===== journal_today =====
+Jun 15 06:00:02 proxmox mirror_scheduler[1930]: [info] execute mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:02 proxmox mirror_scheduler[1930]: [info] start mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:02 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] execute mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:02 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] start mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Command failed: /usr/bin/python3 /home/admin/pyscripts/mirror.py /home/admin /mnt/onebackup/home
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Return code: 1
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Output:
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: source folder /home/admin and dest folder /mnt/onebackup/home MUST exists, exit.
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Error:
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: [info] end mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:12 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] end mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: [info] next mirror @ 2026-06-15 07:00:00 : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 15 06:00:12 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] next mirror @ 2026-06-15 07:00:00 : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+-- Boot 10f43aaff3dc4ca8b508e386012cb70a --
+Jun 15 12:18:27 proxmox systemd[1]: Started mirror_scheduler.service - Mirror Scheduler.
+Jun 15 12:18:27 proxmox mirror_scheduler[1915]: [info] start service mirror_scheduler
+Jun 15 12:18:27 proxmox mirror_scheduler[1915]: [info] next mirror @ 2026-06-16 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 15 12:18:27 proxmox /home/admin/pyscripts/mirror_scheduler.py[1915]: [info] start service mirror_scheduler
+Jun 15 12:18:27 proxmox /home/admin/pyscripts/mirror_scheduler.py[1915]: [info] next mirror @ 2026-06-16 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+
+===== journal_week =====
+Jun 11 07:00:13 proxmox mirror_scheduler[1930]: Command failed: /usr/bin/python3 /home/admin/pyscripts/mirror.py /mnt/main-pool/you /mnt/onebackup/you
+Jun 11 07:00:13 proxmox mirror_scheduler[1930]: Return code: 1
+Jun 11 07:00:13 proxmox mirror_scheduler[1930]: Output:
+Jun 11 07:00:13 proxmox mirror_scheduler[1930]: source folder /mnt/main-pool/you and dest folder /mnt/onebackup/you MUST exists, exit.
+Jun 11 07:00:13 proxmox mirror_scheduler[1930]: Error:
+Jun 11 07:00:13 proxmox mirror_scheduler[1930]: [info] end mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 11 07:00:13 proxmox mirror_scheduler[1930]: [info] next mirror @ 2026-06-12 07:00:00 : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 11 07:00:13 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] end mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 11 07:00:13 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] next mirror @ 2026-06-12 07:00:00 : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 12 07:00:05 proxmox mirror_scheduler[1930]: [info] execute mirror : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 12 07:00:05 proxmox mirror_scheduler[1930]: [info] start split : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 12 07:00:05 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] execute mirror : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 12 07:00:05 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] start split : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 12 07:00:46 proxmox mirror_scheduler[1930]: Command failed: /usr/bin/python3 /home/admin/pyscripts/bigsplitter.py split /mnt/main-pool/data/data2.hc /mnt/onebackup/data
+Jun 12 07:00:46 proxmox mirror_scheduler[1930]: Return code: 1
+Jun 12 07:00:46 proxmox mirror_scheduler[1930]: Output:
+Jun 12 07:00:46 proxmox mirror_scheduler[1930]: Error:
+Jun 12 07:00:46 proxmox mirror_scheduler[1930]: Exception: [Errno 19] No such device: '/mnt/onebackup/data/logs'
+Jun 12 07:00:46 proxmox mirror_scheduler[1930]: [info] end split : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 12 07:00:46 proxmox mirror_scheduler[1930]: [info] next mirror @ 2026-06-13 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 12 07:00:46 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] end split : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 12 07:00:46 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] next mirror @ 2026-06-13 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 13 07:00:08 proxmox mirror_scheduler[1930]: [info] execute mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 13 07:00:08 proxmox mirror_scheduler[1930]: [info] start mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 13 07:00:08 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] execute mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 13 07:00:08 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] start mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 13 07:00:18 proxmox mirror_scheduler[1930]: Command failed: /usr/bin/python3 /home/admin/pyscripts/mirror.py /mnt/main-pool/you /mnt/onebackup/you
+Jun 13 07:00:18 proxmox mirror_scheduler[1930]: Return code: 1
+Jun 13 07:00:18 proxmox mirror_scheduler[1930]: Output:
+Jun 13 07:00:18 proxmox mirror_scheduler[1930]: source folder /mnt/main-pool/you and dest folder /mnt/onebackup/you MUST exists, exit.
+Jun 13 07:00:18 proxmox mirror_scheduler[1930]: Error:
+Jun 13 07:00:18 proxmox mirror_scheduler[1930]: [info] end mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 13 07:00:18 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] end mirror : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 13 07:00:18 proxmox mirror_scheduler[1930]: [info] next mirror @ 2026-06-14 05:00:00 : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 13 07:00:18 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] next mirror @ 2026-06-14 05:00:00 : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 14 05:00:00 proxmox mirror_scheduler[1930]: [info] execute mirror : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 14 05:00:00 proxmox mirror_scheduler[1930]: [info] start mirror : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 14 05:00:00 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] execute mirror : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 14 05:00:00 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] start mirror : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 14 05:00:10 proxmox mirror_scheduler[1930]: Command failed: /usr/bin/python3 /home/admin/pyscripts/mirror.py /mnt/main-pool/media /mnt/onebackup/media
+Jun 14 05:00:10 proxmox mirror_scheduler[1930]: Return code: 1
+Jun 14 05:00:10 proxmox mirror_scheduler[1930]: Output:
+Jun 14 05:00:10 proxmox mirror_scheduler[1930]: source folder /mnt/main-pool/media and dest folder /mnt/onebackup/media MUST exists, exit.
+Jun 14 05:00:10 proxmox mirror_scheduler[1930]: Error:
+Jun 14 05:00:10 proxmox mirror_scheduler[1930]: [info] end mirror : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 14 05:00:10 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] end mirror : /mnt/main-pool/media => /mnt/onebackup/media
+Jun 14 05:00:10 proxmox mirror_scheduler[1930]: [info] next mirror @ 2026-06-14 07:00:00 : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 05:00:10 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] next mirror @ 2026-06-14 07:00:00 : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 07:00:00 proxmox mirror_scheduler[1930]: [info] execute mirror : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 07:00:00 proxmox mirror_scheduler[1930]: [info] start mirror : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 07:00:00 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] execute mirror : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 07:00:00 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] start mirror : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 07:00:10 proxmox mirror_scheduler[1930]: Command failed: /usr/bin/python3 /home/admin/pyscripts/mirror.py /mnt/main-pool/cloud /mnt/onebackup/cloud
+Jun 14 07:00:10 proxmox mirror_scheduler[1930]: Return code: 1
+Jun 14 07:00:10 proxmox mirror_scheduler[1930]: Output:
+Jun 14 07:00:10 proxmox mirror_scheduler[1930]: source folder /mnt/main-pool/cloud and dest folder /mnt/onebackup/cloud MUST exists, exit.
+Jun 14 07:00:10 proxmox mirror_scheduler[1930]: Error:
+Jun 14 07:00:10 proxmox mirror_scheduler[1930]: [info] end mirror : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 07:00:10 proxmox mirror_scheduler[1930]: [info] next mirror @ 2026-06-15 06:00:00 : /home/admin => /mnt/onebackup/home
+Jun 14 07:00:10 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] end mirror : /mnt/main-pool/cloud => /mnt/onebackup/cloud
+Jun 14 07:00:10 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] next mirror @ 2026-06-15 06:00:00 : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:02 proxmox mirror_scheduler[1930]: [info] execute mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:02 proxmox mirror_scheduler[1930]: [info] start mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:02 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] execute mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:02 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] start mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Command failed: /usr/bin/python3 /home/admin/pyscripts/mirror.py /home/admin /mnt/onebackup/home
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Return code: 1
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Output:
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: source folder /home/admin and dest folder /mnt/onebackup/home MUST exists, exit.
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: Error:
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: [info] end mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:12 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] end mirror : /home/admin => /mnt/onebackup/home
+Jun 15 06:00:12 proxmox mirror_scheduler[1930]: [info] next mirror @ 2026-06-15 07:00:00 : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+Jun 15 06:00:12 proxmox /home/admin/pyscripts/mirror_scheduler.py[1930]: [info] next mirror @ 2026-06-15 07:00:00 : /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+-- Boot 10f43aaff3dc4ca8b508e386012cb70a --
+Jun 15 12:18:27 proxmox systemd[1]: Started mirror_scheduler.service - Mirror Scheduler.
+Jun 15 12:18:27 proxmox mirror_scheduler[1915]: [info] start service mirror_scheduler
+Jun 15 12:18:27 proxmox mirror_scheduler[1915]: [info] next mirror @ 2026-06-16 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 15 12:18:27 proxmox /home/admin/pyscripts/mirror_scheduler.py[1915]: [info] start service mirror_scheduler
+Jun 15 12:18:27 proxmox /home/admin/pyscripts/mirror_scheduler.py[1915]: [info] next mirror @ 2026-06-16 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+
+===== utils_log =====
+ls: cannot access '/home/admin/logs/': No such file or directory
+ls: cannot access '/var/log/mirror_scheduler*': No such file or directory
+/home/admin/pyscripts/mirror_scheduler.py
+/home/admin/bin/services/mirror_scheduler.service
+/home/admin/.gemini/antigravity/code_tracker/active/no_repo/a14df261afcbc354ff292ee89efa4ae8_mirror_scheduler.service
+
+===== home_mirror_head =====
+2026-06-15 18:10:31,507 | ------------------------------------------------------------------------------------------------
+2026-06-15 18:10:31,507 | Start Mirror  /home/admin => /mnt/onebackup/home
+2026-06-15 18:10:31,509 | [0.12 mb] copied /home/admin/.zcompdump-proxmox-5.9.zwc
+2026-06-15 18:10:31,509 | [0.06 mb] copied /home/admin/.zsh_history
+2026-06-15 18:10:31,510 | [0.0 mb] copied /home/admin/.profile
+---
+2026-06-15 18:10:34,816 | [0.0 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/jedi/third_party/typeshed/stdlib/2and3/xml/parsers/expat/errors.pyi
+2026-06-15 18:10:34,825 | [0.0 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/jedi/third_party/typeshed/stdlib/2and3/pyexpat/errors.pyi
+2026-06-15 18:10:34,827 | [0.0 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/jedi/api/errors.py
+2026-06-15 18:10:34,835 | [0.0 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/jedi/api/__pycache__/errors.cpython-311.pyc
+2026-06-15 18:10:34,856 | [0.05 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/parso/python/errors.py
+2026-06-15 18:10:34,858 | [0.06 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/parso/python/__pycache__/errors.cpython-311.pyc
+2026-06-15 18:10:34,900 | [0.0 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/cattr/errors.py
+2026-06-15 18:10:34,936 | [0.0 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/cattrs/errors.py
+2026-06-15 18:10:34,942 | [0.01 mb] copied /home/admin/.antigravity-server/extensions/ms-python.python-2025.20.1-universal/python_files/lib/jedilsp/cattrs/__pycache__/errors.cpython-311.pyc
+2026-06-15 18:10:34,957 | End Mirror  /home/admin => /mnt/onebackup/home, SIZE:0.56 gb  COPIED:6515  DELETED:0
+
+===== data_backup_head =====
+2026-06-15 18:12:43,564 | /mnt/main-pool/data/data2.hc : size is 665600 mb => spitting in 6656 chunks of 100 mb
+2026-06-15 18:12:45,074 | 000000 not found , writing data2.hc.000000.6f8d7067502ba024371a06f729a4f7ddf238ec57.100.chunk
+2026-06-15 18:12:46,140 | 000001 not found , writing data2.hc.000001.a45a0cfc47077ec1d36adaac81d461f262568cf9.100.chunk
+2026-06-15 18:12:47,233 | 000002 not found , writing data2.hc.000002.a7bd37f4860f8ee22496f5aa17da127f50b79388.100.chunk
+2026-06-15 18:12:47,421 | 000003 not found , writing data2.hc.000003.1e33df52ebf08334aa36c8a51e308c6b3e17f3ed.100.chunk
+---
+2026-06-15 18:12:43,564 | /mnt/main-pool/data/data2.hc : size is 665600 mb => spitting in 6656 chunks of 100 mb
+
+===== service_unit =====
+[Unit]
+Description=Mirror Scheduler
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/admin/pyscripts/mirror_scheduler.py
+Restart=on-failure
+User=admin
+WorkingDirectory=/home/admin/pyscripts
+Environment=PYTHONUNBUFFERED=1
+SyslogIdentifier=mirror_scheduler
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

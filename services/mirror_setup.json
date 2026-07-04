@@ -1,0 +1,62 @@
+[
+    {
+        "type": "mirror",
+        "enabled": true,
+        "day": ["sunday"],
+        "hour": 5,
+        "minute": 0,
+        "source": "/mnt/main-pool/media",
+        "destination": "/mnt/onebackup/media"
+    },
+    {
+        "type": "mirror",
+        "enabled": true,
+        "day": ["sunday"],
+        "run_after": "/mnt/main-pool/media",
+        "source": "/home/admin",
+        "destination": "/mnt/onebackup/home"
+    },
+    {
+        "type": "mirror",
+        "enabled": true,
+        "day": ["sunday"],
+        "run_after": "/home/admin",
+        "source": "/mnt/main-pool/cloud",
+        "destination": "/mnt/onebackup/cloud"
+    },
+    {
+        "type": "vzdump",
+        "enabled": true,
+        "day": ["sunday"],
+        "run_after": "/mnt/main-pool/cloud",
+        "source": "vzdump-ct",
+        "storage": "onebackup-vzdump",
+        "vmids": [102, 103, 104],
+        "keep_last": 2
+    },
+    {
+        "type": "healthcheck",
+        "enabled": true,
+        "day": ["sunday"],
+        "run_after": "vzdump-ct",
+        "source": "healthcheck"
+    },
+    {
+        "type": "split",
+        "enabled": true,
+        "day": ["monday", "wednesday", "friday"],
+        "hour": 7,
+        "minute": 0,
+        "source": "/mnt/main-pool/data/data2.hc",
+        "destination": "/mnt/onebackup/data"
+    },
+    {
+        "type": "mirror",
+        "enabled": true,
+        "day": ["tuesday", "thursday", "saturday"],
+        "hour": 7,
+        "minute": 0,
+        "source": "/mnt/main-pool/you",
+        "destination": "/mnt/onebackup/you"
+    }
+]

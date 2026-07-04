@@ -1,0 +1,18 @@
+[Unit]
+Description=ZFS Pool Standby Monitor
+After=network.target zfs-import.target
+Requires=zfs-import.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/admin/pyscripts/pool_standby.py main-pool 60
+Restart=on-failure
+User=admin
+WorkingDirectory=/home/admin/pyscripts
+Environment=PYTHONUNBUFFERED=1
+SyslogIdentifier=pool_standby
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

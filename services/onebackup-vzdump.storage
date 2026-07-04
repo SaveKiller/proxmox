@@ -1,0 +1,4 @@
+dir: onebackup-vzdump
+    path /mnt/onebackup/vzdump
+    content backup
+    prune-backups keep-last=2

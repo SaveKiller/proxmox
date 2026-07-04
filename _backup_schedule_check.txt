@@ -1,0 +1,126 @@
+
+===== HOST TIME =====
+2026-06-15 18:44:23 CEST (Monday)
+               Local time: Mon 2026-06-15 18:44:23 CEST
+                Time zone: Europe/Rome (CEST, +0200)
+              NTP service: active
+
+===== SERVICE mirror_scheduler =====
+enabled
+active
+● mirror_scheduler.service - Mirror Scheduler
+     Loaded: loaded (/etc/systemd/system/mirror_scheduler.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2026-06-15 12:18:27 CEST; 6h ago
+   Main PID: 1915 (python3)
+      Tasks: 1 (limit: 38067)
+     Memory: 8.7M
+        CPU: 244ms
+     CGroup: /system.slice/mirror_scheduler.service
+             └─1915 /usr/bin/python3 /home/admin/pyscripts/mirror_scheduler.py
+
+Jun 15 12:18:27 proxmox systemd[1]: Started mirror_scheduler.service - Mirror Scheduler.
+Jun 15 12:18:27 proxmox mirror_scheduler[1915]: [info] start service mirror_scheduler
+Jun 15 12:18:27 proxmox mirror_scheduler[1915]: [info] next mirror @ 2026-06-16 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+Jun 15 12:18:27 proxmox /home/admin/pyscripts/mirror_scheduler.py[1915]: [info] start service mirror_scheduler
+Jun 15 12:18:27 proxmox /home/admin/pyscripts/mirror_scheduler.py[1915]: [info] next mirror @ 2026-06-16 07:00:00 : /mnt/main-pool/you => /mnt/onebackup/you
+
+===== mirror_setup.json =====
+[
+  {
+  "type": "mirror",
+  "enabled": true,
+  "day": ["sunday"],
+  "hour": 5,
+  "minute": 0,
+  "source": "/mnt/main-pool/media",
+  "destination": "/mnt/onebackup/media"
+  },
+  {
+  "type": "mirror",
+  "enabled": true,
+  "day": ["sunday"],
+  "hour": 7,
+  "minute": 0,
+  "source": "/mnt/main-pool/cloud",
+  "destination": "/mnt/onebackup/cloud"
+  },
+  {
+  "type": "mirror",
+  "enabled": true,
+  "day": ["monday"],
+  "hour": 6,
+  "minute": 0,
+  "source": "/home/admin",
+  "destination": "/mnt/onebackup/home"
+  },
+  {
+  "type": "split",
+  "enabled": true,
+  "day": ["monday", "wednesday", "friday"],
+  "hour": 7,
+  "minute": 0,
+  "source": "/mnt/main-pool/data/data2.hc",
+  "destination": "/mnt/onebackup/data"
+  },
+  {
+  "type": "mirror",
+  "enabled": true,
+  "day": ["tuesday", "thursday", "saturday"],
+  "hour": 7,
+  "minute": 0,
+  "source": "/mnt/main-pool/you",
+  "destination": "/mnt/onebackup/you"
+  }
+]
+
+===== NEXT RUNS (computed) =====
+Ora host: 2026-06-15 18:44:23
+
+Prossime esecuzioni (ordinate):
+  2026-06-16 07:00 | mirror | mar/gio/sab 07:00 | enabled=ON | /mnt/main-pool/you => /mnt/onebackup/you
+  2026-06-17 07:00 | split  | lun/mer/ven 07:00 | enabled=ON | /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+  2026-06-18 07:00 | mirror | mar/gio/sab 07:00 | enabled=ON | /mnt/main-pool/you => /mnt/onebackup/you
+  2026-06-19 07:00 | split  | lun/mer/ven 07:00 | enabled=ON | /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+  2026-06-20 07:00 | mirror | mar/gio/sab 07:00 | enabled=ON | /mnt/main-pool/you => /mnt/onebackup/you
+  2026-06-21 05:00 | mirror | dom         05:00 | enabled=ON | /mnt/main-pool/media => /mnt/onebackup/media
+  2026-06-21 07:00 | mirror | dom         07:00 | enabled=ON | /mnt/main-pool/cloud => /mnt/onebackup/cloud
+  2026-06-22 06:00 | mirror | lun         06:00 | enabled=ON | /home/admin => /mnt/onebackup/home
+  2026-06-22 07:00 | split  | lun/mer/ven 07:00 | enabled=ON | /mnt/main-pool/data/data2.hc => /mnt/onebackup/data
+
+===== PATH CHECKS =====
+mirror /mnt/main-pool/media => /mnt/onebackup/media : SRC_OK, DST_OK, ONEBACKUP_MOUNTED
+mirror /mnt/main-pool/cloud => /mnt/onebackup/cloud : SRC_OK, DST_OK, ONEBACKUP_MOUNTED
+mirror /home/admin => /mnt/onebackup/home : SRC_OK, DST_OK, ONEBACKUP_MOUNTED
+split  /mnt/main-pool/data/data2.hc => /mnt/onebackup/data : SRC_OK, DST_OK, ONEBACKUP_MOUNTED
+mirror /mnt/main-pool/you => /mnt/onebackup/you : SRC_OK, DST_OK, ONEBACKUP_MOUNTED
+
+===== LOG mirror_scheduler (tail 30) =====
+tail: cannot open '/home/admin/logs/mirror_scheduler.log' for reading: No such file or directory
+
+===== BACKUP LOGS (recent) =====
+--- /mnt/onebackup/media ---
+ls: cannot access '/mnt/onebackup/media/mirror.log': No such file or directory
+ls: cannot access '/mnt/onebackup/media/logs/backup.log': No such file or directory
+--- /mnt/onebackup/cloud ---
+ls: cannot access '/mnt/onebackup/cloud/mirror.log': No such file or directory
+ls: cannot access '/mnt/onebackup/cloud/logs/backup.log': No such file or directory
+--- /mnt/onebackup/home ---
+ls: cannot access '/mnt/onebackup/home/logs/backup.log': No such file or directory
+-rw-r--r-- 1 admin admin 1080230 Jun 15 18:10 /mnt/onebackup/home/mirror.log
+2026-06-15 18:10:34,957 | End Mirror  /home/admin => /mnt/onebackup/home, SIZE:0.56 gb  COPIED:6515  DELETED:0
+2026-06-15 18:10:34,957 | ------------------------------------------------------------------------------------------------
+--- /mnt/onebackup/you ---
+ls: cannot access '/mnt/onebackup/you/mirror.log': No such file or directory
+ls: cannot access '/mnt/onebackup/you/logs/backup.log': No such file or directory
+--- /mnt/onebackup/data ---
+ls: cannot access '/mnt/onebackup/data/mirror.log': No such file or directory
+-rw-r--r-- 1 admin admin 266525 Jun 15 18:44 /mnt/onebackup/data/logs/backup.log
+2026-06-15 18:44:23,416 | 002207 not found , writing data2.hc.002207.5bdf3a8eb92a87d69a28bbc3f5e5da62b5ad41ce.100.chunk
+2026-06-15 18:44:23,629 | 002208 not found , writing data2.hc.002208.108103d14782c64c96dc4e7f087c9a5d9afcfbe0.100.chunk
+
+===== VZDUMP CRON =====
+PATH="/usr/sbin:/usr/bin:/sbin:/bin"
+lrwxrwxrwx 1 root root 20 Apr 30  2025 /etc/cron.d/vzdump -> /etc/pve/vzdump.cron
+
+===== CRONTAB admin =====
+no crontab for admin
