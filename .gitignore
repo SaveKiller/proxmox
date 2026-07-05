@@ -149,6 +149,8 @@ activemq-data/
 
 # Environments
 .env
+docs/mem0-access.txt
+docs/network.txt
 .envrc
 .venv
 env/

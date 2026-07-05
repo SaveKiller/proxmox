@@ -148,6 +148,10 @@ stato mount `onebackup`, prossimo job schedulato (ultima riga `next mirror @` ne
 Segnala se un job mirror ha `COPIED:0` a lungo (probabilmente già allineato, non errore).
 Segnala se dst è molto più grande di src su cloud (possibili file eliminati non ripuliti).
 
+## Rete LAN
+
+Mappa IP e dispositivi: fonte unica `L:\Logon\network.txt`, esposta nel progetto come symlink `docs/network.txt` (non versionare, non copiare nel repo).
+
 ## SSH
 
 La connessione dell'agente la macchina proxmox può essere fatta
